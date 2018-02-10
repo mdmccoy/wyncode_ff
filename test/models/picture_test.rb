@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PictureTest < ActiveSupport::TestCase
   def setup
-    @picture = Picture.new(url: 'www.something.com',
+    @picture = Picture.new(url: 'www.something.jpeg',
                            caption: 'present',
                            location: 'something',
                            rating: 5)
@@ -22,8 +22,13 @@ class PictureTest < ActiveSupport::TestCase
     assert_not @picture.valid?
   end
 
-  # test 'rating should be between 1-5' do
-  #   @picture.rating = 6
-  #   assert_not @picture.valid?
-  # end
+  test 'rating should be between 1-5' do
+    @picture.rating = 6
+    assert_not @picture.valid?
+  end
+
+  test 'url should be a picture' do
+    @picture.url = 'asfdkljasfdlkj'
+    assert_not @picture.valid?
+  end
 end
