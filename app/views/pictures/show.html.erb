@@ -20,6 +20,9 @@
   <%= @picture.rating %>
 </p>
 
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>
+
 <h3>Reviews</h3>
 <% @picture.reviews.each do |review| %>
   <p>
@@ -28,10 +31,6 @@
     Added on: <%= review.created_at %>
   </p>
 <% end %>
-
-
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
 
 
 <h1>New Review</h1>
