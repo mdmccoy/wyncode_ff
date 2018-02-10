@@ -1,5 +1,5 @@
 class Picture < ApplicationRecord
-  validates :url, :rating, presence: true
+  validates :url, :rating, :caption, presence: true
 
   has_many :reviews
 end
