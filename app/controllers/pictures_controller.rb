@@ -10,6 +10,13 @@ class PicturesController < ApplicationController
   # GET /pictures/1
   # GET /pictures/1.json
   def show
+    @avg_score = 0
+    reviews = Review.where(picture_id: @picture.id)
+
+    reviews.each do |review|
+      @avg_score += review.rating
+    end
+    @avg_score /= reviews.count
     @review = Review.new
   end
 
