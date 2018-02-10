@@ -16,8 +16,12 @@
 </p>
 
 <p>
-  <strong>Rating:</strong>
-  <%= @picture.rating %>
+  <strong>Average Rating:</strong>
+  <!-- This should be an average of all the ratings tied to the picture. -->
+  <%= @avg_score %>
+  <% @avg_score.times do  %>
+    <span><i class="fa fa-star"></i></span>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_picture_path(@picture) %> |
@@ -28,7 +32,7 @@
   <p>
     <%= review.description %>
     <br>
-    Added on: <%= review.created_at %>
+    Added by <%= review.author %> @ <%= review.created_at %>
   </p>
 <% end %>
 
