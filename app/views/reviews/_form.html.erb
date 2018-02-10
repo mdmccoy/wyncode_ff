@@ -26,10 +26,17 @@
     <%= form.number_field :rating, id: :review_rating %>
   </div>
 
-  <div class="field">
-    <%= form.label :picture_id %>
-    <%= form.text_field :picture_id, id: :review_picture_id %>
-  </div>
+  <% if @picture.nil? %>
+    <div class="field">
+      <%= form.label :picture_id %>
+      <%= form.text_field :picture_id, id: :review_picture_id %>
+    </div>
+
+  <% else %>
+      <%= form.label :picture_id %>
+      <%= form.hidden_field :picture_id, disabled:true, value:@picture.id %>
+
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>

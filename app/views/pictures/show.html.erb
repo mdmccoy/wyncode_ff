@@ -2,12 +2,7 @@
 
 <p>
   <strong>Url:</strong>
-  <%= @picture.url %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @picture.rating %>
+  <%= image_tag @picture.url %>
 </p>
 
 <p>
@@ -20,5 +15,25 @@
   <%= @picture.location %>
 </p>
 
+<p>
+  <strong>Rating:</strong>
+  <%= @picture.rating %>
+</p>
+
+<h3>Reviews</h3>
+<% @picture.reviews.each do |review| %>
+  <p>
+    <%= review.description %>
+    <br>
+    Added on: <%= review.created_at %>
+  </p>
+<% end %>
+
+
 <%= link_to 'Edit', edit_picture_path(@picture) %> |
 <%= link_to 'Back', pictures_path %>
+
+
+<h1>New Review</h1>
+
+<%= render partial: 'reviews/form', locals: { review: @review } %>

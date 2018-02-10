@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :set_picture, only: %i[show edit update destroy]
 
   # GET /pictures
   # GET /pictures.json
@@ -10,6 +10,7 @@ class PicturesController < ApplicationController
   # GET /pictures/1
   # GET /pictures/1.json
   def show
+    @review = Review.new
   end
 
   # GET /pictures/new
@@ -18,8 +19,7 @@ class PicturesController < ApplicationController
   end
 
   # GET /pictures/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /pictures
   # POST /pictures.json
@@ -62,13 +62,14 @@ class PicturesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_picture
-      @picture = Picture.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def picture_params
-      params.require(:picture).permit(:url, :rating, :caption, :location)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_picture
+    @picture = Picture.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def picture_params
+    params.require(:picture).permit(:url, :caption, :location, :rating)
+  end
 end

@@ -17,11 +17,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :rating %>
-    <%= form.text_field :rating, id: :picture_rating %>
-  </div>
-
-  <div class="field">
     <%= form.label :caption %>
     <%= form.text_field :caption, id: :picture_caption %>
   </div>
@@ -29,6 +24,11 @@
   <div class="field">
     <%= form.label :location %>
     <%= form.text_field :location, id: :picture_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating, id: :picture_rating %>
   </div>
 
   <div class="actions">
