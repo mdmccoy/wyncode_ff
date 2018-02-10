@@ -33,8 +33,7 @@
     </div>
 
   <% else %>
-      <%= form.label :picture_id %>
-      <%= form.hidden_field :picture_id, disabled:true, value:@picture.id %>
+      <%= form.hidden_field :picture_id, value:@picture.id %>
 
   <% end %>
 

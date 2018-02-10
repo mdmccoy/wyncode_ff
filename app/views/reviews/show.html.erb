@@ -15,9 +15,11 @@
   <%= @review.rating %>
 </p>
 
+
+<%=  %>
 <p>
   <strong>Picture:</strong>
-  <%= @review.picture %>
+  <%= image_tag @review.picture.url %>
 </p>
 
 <%= link_to 'Edit', edit_review_path(@review) %> |
