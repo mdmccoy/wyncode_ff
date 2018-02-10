@@ -13,3 +13,54 @@
  *= require_tree .
  *= require_self
  */
+
+/* universal styles */
+
+
+ * {
+   box-sizing: border-box;
+ }
+
+header {
+  background-color: #35466C;
+  height: 4em;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-shadow: 2px 2px 2px black;
+  text-align: center;
+  justify-content: space-around;
+  color: white;
+  position: fixed;
+}
+
+#notice {
+  margin: 0;
+}
+
+
+.fa-upload {
+  font-size: 3em;
+  color: white;
+  padding-right: 0.5em;
+}
+
+.fa-fort-awesome {
+  font-size: 3em;
+  color: white;
+  padding-right: 0.5em;
+}
+
+
+body {
+  margin: 0;
+}
+
+.row div a {
+  color: #fff;
+}
+
+#sitename {
+
+  font-size: 2em;
+}
