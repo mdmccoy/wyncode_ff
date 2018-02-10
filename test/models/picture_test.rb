@@ -31,4 +31,14 @@ class PictureTest < ActiveSupport::TestCase
     @picture.url = 'asfdkljasfdlkj'
     assert_not @picture.valid?
   end
+
+  test 'url should not be too long' do
+    @picture.url = 'a' * 255 + '.jpeg'
+    assert_not @picture.valid?
+  end
+
+  test 'caption should not be too long' do
+    @picture.caption = 'a' * 256
+    assert_not @picture.valid?
+  end
 end
