@@ -29,6 +29,22 @@ body {
   background-attachment: fixed;
 }
 
+/** PICTURE NEW VIEW **/
+
+div.new-picture-wrapper {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.container.picture {
+  display: flex;
+  justify-content: center;
+}
+
+.transparent-bg {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10vh 10vw;
+}
+
 /*** PICTURE SHOW VIEW ***/
 
 .main-image {
