@@ -13,19 +13,14 @@
 <p>
   <strong>Location:</strong>
   <%= @picture.location %>
-  <!-- <%= @url %> -->
   <%= street_view @picture %>
 </p>
 
 <p>
   <strong>Average Rating:</strong>
-  <!-- This should be an average of all the ratings tied to the picture. -->
-  <%= @avg_score %>
-  <% @avg_score.times do  %>
-    <span>
-      <i class="fa fa-star"></i>
-    </span>
-  <% end %>
+
+  <%= average_rating @picture %>
+
 </p>
 
 <%= link_to 'Edit', edit_picture_path(@picture) %>
