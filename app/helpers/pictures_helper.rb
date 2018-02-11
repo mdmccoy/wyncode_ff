@@ -9,7 +9,7 @@ module PicturesHelper
 
       url = "https://www.google.com/maps/embed/v1/streetview?key=#{ENV['GOOGLE_MAPS_KEY_FF']}&location=#{lat},#{lng}"
       # binding.pry
-      content_tag(:iframe, '', src: url, width: 560, height: 315, frameborder: 0)
+      content_tag(:iframe, '', src: url, width: 560, height: 315, class: 'embed-responsive-item')
     end
   end
 
