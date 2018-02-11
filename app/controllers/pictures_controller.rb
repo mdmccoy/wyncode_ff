@@ -12,11 +12,13 @@ class PicturesController < ApplicationController
   def show
     @avg_score = 0
     reviews = Review.where(picture_id: @picture.id)
-
     reviews.each do |review|
       @avg_score += review.rating
     end
-    @avg_score /= reviews.count
+    reviews.count.zero? ? @avg_score = 0 : @avg_score /= reviews.count
+
+    @picture.location
+    @url = "https://www.google.com/maps/embed/v1/streetview?key=AIzaSyDVugT7KHG7KbKHLFjQBmaytGDi4S4qAB0&location=#{@picture.location}" unless @picture.location.empty?
     @review = Review.new
   end
 
