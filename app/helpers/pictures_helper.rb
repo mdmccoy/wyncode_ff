@@ -3,8 +3,11 @@ module PicturesHelper
     # need to add logic here to handle different address types
     unless picture.location.empty?
       parsed_loc = picture.location.gsub(/[,]/, '').gsub(/\W/, '+')
-      geocoded_loc = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{parsed_loc}&key=#{ENV['GOOGLE_GEOCODE_KEY']}")
-      url = "https://www.google.com/maps/embed/v1/streetview?key=#{ENV['GOOGLE_MAPS_KEY_FF']}=#{geocoded_loc}"
+      geocoded_loc = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{parsed_loc}&key=#{ENV['GOOGLE_GEOCODE_KEY']}")['results'][0]['geometry']['location']
+      lat = geocoded_loc['lat']
+      lng = geocoded_loc['lng']
+
+      url = "https://www.google.com/maps/embed/v1/streetview?key=#{ENV['GOOGLE_MAPS_KEY_FF']}&location=#{lat},#{lng}"
       # binding.pry
       content_tag(:iframe, '', src: url, width: 560, height: 315, frameborder: 0)
     end
