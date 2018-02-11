@@ -16,10 +16,6 @@
 
 /* universal styles */
 
-/* * {
-box-sizing: border-box;
-} */
-
 html, body {
   margin: 0;
   padding: 0;
@@ -28,4 +24,45 @@ html, body {
 
 body {
   font-family: Quicksand;
+  color: white;
+  background-image: url('brickWall.jpeg');
 }
+
+/*** PICTURE SHOW VIEW ***/
+
+div#location {
+  margin-top: 1vh;
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
+
+.review-block {
+  background: black;
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
+
+/* section figure {
+  float: left;
+  clear: both;
+  position: relative;
+  overflow: auto;
+  margin: 0 auto;
+  padding: 30px 0 0 0;
+  font-size: 15px;
+}
+
+section figure img {
+  vertical-align: bottom;
+}
+
+section figure figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+} */
