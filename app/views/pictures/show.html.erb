@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -39,3 +40,49 @@
 <h1>New Review</h1>
 
 <%= render partial: 'reviews/form', locals: { review: @review } %>
+=======
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= image_tag @picture.url %>
+</p>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @picture.caption %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @picture.location %>
+  <%= street_view @picture %>
+</p>
+
+<p>
+  <strong>Average Rating:</strong>
+
+  <%= average_rating @picture %>
+
+</p>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %>
+|
+<%= link_to 'Back', pictures_path %>
+
+<h3>Reviews</h3>
+<% @picture.reviews.each do |review| %>
+  <p>
+    <%= review.description %>
+    <br>
+    Added by
+    <%= review.author %>
+    @
+    <%= review.created_at %>
+  </p>
+<% end %>
+
+<h1>New Review</h1>
+
+<%= render partial: 'reviews/form', locals: { review: @review } %>
+>>>>>>> e8897593e15477492b45f1646cb9d72931f481b3
