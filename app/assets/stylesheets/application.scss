@@ -1,0 +1,125 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%
+}
+
+body {
+  font-family: Quicksand;
+  color: white;
+  background-image: url('white-brick-wall.jpeg');
+  background-attachment: fixed;
+}
+
+/* Image hover effect */
+
+.imghover img { transition: all .2s ease-in-out; }
+.imghover:hover {
+  img {
+    transform: scale(1.1);
+  }
+  .overlay {
+    height: 20%;
+  }
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #0A0D01;
+  overflow: hidden;
+  width: 85%;
+  height: 0;
+  transition: .5s ease;
+  opacity: 0.8;
+}
+
+
+.overlaytext {
+  white-space: nowrap;
+  color: white;
+  font-size: 15px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/* image styling */
+
+img {
+  padding: 1em;
+}
+
+/** PICTURE NEW VIEW **/
+
+div.new-picture-wrapper {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.container.picture {
+  display: flex;
+  justify-content: center;
+}
+
+.transparent-bg {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10vh 10vw;
+}
+
+/*** PICTURE SHOW VIEW ***/
+
+.main-image {
+  margin: 0 auto;
+  padding-top: 7vh;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.img-row {
+  display: flex;
+  justify-content: center;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+span.star {
+  color: yellow;
+}
+
+p.review {
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+div.margin-top {
+  margin-top: 1vh;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  margin-bottom: 1vh;
+}
+
+.review-block {
+  background: rgba(0, 0, 0, 0.7);
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
+
+div.about-text{
+  width:80%;
+  margin: 4em auto;
+  text-align: justify;
+}
