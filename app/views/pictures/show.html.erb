@@ -1,44 +1,59 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Url:</strong>
-  <%= image_tag @picture.url %>
-</p>
+<div class="container">
 
-<p>
-  <strong>Caption:</strong>
-  <%= @picture.caption %>
-</p>
+<div class="row">
+  <div class="col-12">
+    <%= image_tag @picture.url, class: 'img-fluid' %>
+  </div>
+</div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @picture.location %>
-  <%= street_view @picture %>
-</p>
+<div class="row">
+  <div class="col-12 col-md-6" >
+    <div class="row">
+      <div class="col-12">
+        Caption: <%= @picture.caption %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <strong>Average Rating:</strong>
+        <%= average_rating @picture %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <% @picture.reviews.each do |review| %>
+          <div class="row">
+              <div class="col-12">
+              <%= review.description %>
+              <br>
+              Added by
+              <%= review.author %>
+              @
+              <%= review.created_at %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Average Rating:</strong>
+  <div class="col-12 col-md-6" id="location">
+    <strong>Location:</strong>
+    <%= @picture.location %>
+    <%= street_view @picture %>
+  </div>
+</div>
 
-  <%= average_rating @picture %>
-
-</p>
-
-<%= link_to 'Edit', edit_picture_path(@picture) %>
-|
-<%= link_to 'Back', pictures_path %>
-
-<h3>Reviews</h3>
-<% @picture.reviews.each do |review| %>
-  <p>
-    <%= review.description %>
-    <br>
-    Added by
-    <%= review.author %>
-    @
-    <%= review.created_at %>
-  </p>
-<% end %>
+<div class="row">
+  <div class="col">
+  <%= link_to 'Edit', edit_picture_path(@picture) %> | <%= link_to 'Back', pictures_path %>
+  </div>
+</div>
 
 <h1>New Review</h1>
 
 <%= render partial: 'reviews/form', locals: { review: @review } %>
+
+</div>
