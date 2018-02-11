@@ -1,7 +1,11 @@
 module PicturesHelper
   def street_view(picture)
+    # need to add logic here to handle different address types
     unless picture.location.empty?
-      url = "https://www.google.com/maps/embed/v1/streetview?key=AIzaSyDVugT7KHG7KbKHLFjQBmaytGDi4S4qAB0&location=#{picture.location}"
+      parsed_loc = picture.location.gsub(/[,]/, '').gsub(/\W/, '+')
+      geocoded_loc = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{parsed_loc}&key=#{ENV['GOOGLE_GEOCODE_KEY']}")
+      url = "https://www.google.com/maps/embed/v1/streetview?key=#{ENV['GOOGLE_MAPS_KEY_FF']}=#{geocoded_loc}"
+      # binding.pry
       content_tag(:iframe, '', src: url, width: 560, height: 315, frameborder: 0)
     end
   end
