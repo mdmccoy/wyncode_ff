@@ -28,10 +28,10 @@ $(document).ready(function() {
 
 $(window).on("scroll", function() {
   if($(window).scrollTop()) {
-    $('nav').addClass('black');
+    $('nav').addClass('navbar-dark bg-dark');
   }
   else {
-    $('nav').removeClass('black');
+    $('nav').removeClass('navbar-dark bg-dark');
   }
 });
 console.log('HELLO');
