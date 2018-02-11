@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :rating %>
-    <%= form.number_field :rating, id: :picture_rating %>
+    <%= form.select :rating, Picture::RATING_VALS %>
   </div>
 
   <div class="actions">

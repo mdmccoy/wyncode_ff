@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :rating %>
-    <%= form.number_field :rating, id: :review_rating %>
+    <%= form.select :rating, Picture::RATING_VALS %>
   </div>
 
   <% if @picture.nil? %>
