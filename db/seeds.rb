@@ -27,7 +27,7 @@ end
 200.times do
   Review.create(
     description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    author: %w[TestAuthor Matt Patrick Asger].sample,
+    author: %w[Matt Patrick Asger].sample,
     rating: (1..5).to_a.sample,
     picture_id: (1..50).to_a.sample
   )

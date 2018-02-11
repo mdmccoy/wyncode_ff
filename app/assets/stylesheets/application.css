@@ -25,11 +25,34 @@ html, body {
 body {
   font-family: Quicksand;
   color: white;
-  background-image: url('brickWall.jpeg');
+  background-image: url('white-brick-wall.jpeg');
   background-attachment: fixed;
 }
 
 /*** PICTURE SHOW VIEW ***/
+
+.main-image {
+  margin: 0 auto;
+  padding-top: 7vh;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.img-row {
+  display: flex;
+  justify-content: center;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
 
 div.margin-top {
   margin-top: 1vh;
@@ -44,7 +67,7 @@ div.margin-top {
   margin-left: 1vw;
 }
 
-section figure {
+/* section figure {
   float: left;
   clear: both;
   position: relative;
@@ -67,4 +90,4 @@ section figure figcaption {
   text-align: center;
   color: #fff;
   padding: 10px;
-}
+} */
