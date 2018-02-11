@@ -16,6 +16,10 @@
 
 /* universal styles */
 
+/* * {
+box-sizing: border-box;
+} */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -24,46 +28,40 @@ html, body {
 
 body {
   font-family: Quicksand;
-  color: white;
-  background-image: url('brickWall.jpeg');
 }
 
-/*** PICTURE SHOW VIEW ***/
-
-div.margin-top {
-  margin-top: 1vh;
-  margin-right: 1vw;
-  margin-left: 1vw;
-  margin-bottom: 1vh;
+.imghover img { transition: all .2s ease-in-out; }
+.imghover:hover {
+  img {
+    transform: scale(1.1);
+  }
+  .overlay {
+    height: 20%;
+  }
 }
 
-.review-block {
-  background: rgba(0, 0, 0, 0.7);
-  margin-right: 1vw;
-  margin-left: 1vw;
-}
-
-section figure {
-  float: left;
-  clear: both;
-  position: relative;
-  overflow: auto;
-  margin: 0 auto;
-  padding: 30px 0 0 0;
-  font-size: 15px;
-}
-
-section figure img {
-  vertical-align: bottom;
-}
-
-section figure figcaption {
+.overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  text-align: center;
-  color: #fff;
-  padding: 10px;
+  background-color: #0A0D01;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+  opacity: 0.8;
+}
+
+
+.overlaytext {
+  white-space: nowrap;
+  color: white;
+  font-size: 15px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
