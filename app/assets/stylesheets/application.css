@@ -120,4 +120,13 @@ nav ul li a {
   .menu-icon {
     display: block;
   }
+
+  .aboutus{
+    padding-top: 9vh;
+  }
+
+  #symbol{
+    max-width: 35%;
+    max-height: 35%;
+  }
 }
