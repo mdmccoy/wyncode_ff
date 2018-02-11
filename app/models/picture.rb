@@ -1,4 +1,6 @@
 class Picture < ApplicationRecord
+  RATING_VALS = [1, 2, 3, 4, 5].freeze
+
   validates :url, presence: true, length: { maximum: 255 }
   validates :caption, presence: true, length: { maximum: 255 }
   validates_inclusion_of :rating, in: 1..5

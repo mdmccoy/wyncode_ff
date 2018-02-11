@@ -1,88 +1,62 @@
-<<<<<<< HEAD
 <p id="notice"><%= notice %></p>
 
-<p>
-  <%= image_tag @picture.url %>
-</p>
+<div class="container">
 
-<p>
-  <strong>Caption:</strong>
-  <%= @picture.caption %>
-</p>
+<div class="row">
+  <div class="col-12">
+    <section>
+      <figure>
+        <%= image_tag @picture.url, class: 'img-fluid center-block' %>
+        <figcaption><%= @picture.caption %> <%= average_rating @picture %></figcaption>
+      </figure>
+    </section>
+  </div>
+</div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @picture.location %>
-</p>
+<div class="row margin-top">
+  <div class="col col-12 col-md-6" >
+    <div class="row">
+      <div class="col-12">
+        <div class="review-block rounded">
+          <% @picture.reviews.each do |review| %>
+            <div class="row">
+              <div class="col-12">
+                <%= review.description %>
+                <br>
+                Added by
+                <%= review.author %>
+                @
+                <%= review.created_at %>
+              </div>
+          </div>
+          <% end %>
+      </div>
+        <div class="row">
+          <div class="col-12">
+            <h1>New Review</h1>
 
-<p>
-  <strong>Average Rating:</strong>
-  <!-- This should be an average of all the ratings tied to the picture. -->
-  <%= @avg_score %>
-  <% @avg_score.times do  %>
-    <span><i class="fa fa-star"></i></span>
-  <% end %>
-</p>
+            <%= render partial: 'reviews/form', locals: { review: @review } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
+  <div class="col col-12 col-md-6">
+    <div class=" embed-responsive embed-responsive-16by9" id="location">
 
-<h3>Reviews</h3>
-<% @picture.reviews.each do |review| %>
-  <p>
-    <%= review.description %>
-    <br>
-    Added by <%= review.author %> @ <%= review.created_at %>
-  </p>
-<% end %>
+      <strong>Location:</strong>
+      <%= @picture.location %>
+      <%= street_view @picture %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+  <%= link_to 'Edit', edit_picture_path(@picture) %> | <%= link_to 'Back', pictures_path %>
+  </div>
+</div>
 
 
-<h1>New Review</h1>
-
-<%= render partial: 'reviews/form', locals: { review: @review } %>
-=======
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Url:</strong>
-  <%= image_tag @picture.url %>
-</p>
-
-<p>
-  <strong>Caption:</strong>
-  <%= @picture.caption %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @picture.location %>
-  <%= street_view @picture %>
-</p>
-
-<p>
-  <strong>Average Rating:</strong>
-
-  <%= average_rating @picture %>
-
-</p>
-
-<%= link_to 'Edit', edit_picture_path(@picture) %>
-|
-<%= link_to 'Back', pictures_path %>
-
-<h3>Reviews</h3>
-<% @picture.reviews.each do |review| %>
-  <p>
-    <%= review.description %>
-    <br>
-    Added by
-    <%= review.author %>
-    @
-    <%= review.created_at %>
-  </p>
-<% end %>
-
-<h1>New Review</h1>
-
-<%= render partial: 'reviews/form', locals: { review: @review } %>
->>>>>>> e8897593e15477492b45f1646cb9d72931f481b3
+</div>

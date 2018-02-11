@@ -25,12 +25,10 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-image: url("http://img.qdaily.com/article/article_show/20180116154107lmb196TMefJOcxIG.jpeg?imageMogr2/auto-orient/thumbnail/!755x450r/gravity/Center/crop/755x450/quality/85/format/jpg/ignore-error/1");
 }
 
 body {
   font-family: Quicksand;
-  color: white;
 }
 
 /* --- NAVIGATION ---*/
