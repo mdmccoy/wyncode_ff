@@ -2,14 +2,13 @@
 
 <div class="container">
 
-<div class="row">
-  <div class="col-12">
-    <section>
-      <figure>
-        <%= image_tag @picture.url, class: 'img-fluid center-block' %>
-        <figcaption><%= @picture.caption %> <%= average_rating @picture %></figcaption>
-      </figure>
-    </section>
+<div class="row img-row">
+  <div class="img-wrapper">
+    <%= image_tag @picture.url, class: 'img-fluid main-image' %>
+    <div class="caption">
+      <%= @picture.caption %> Avg: <%= average_rating @picture %>
+    </div>
+
   </div>
 </div>
 
@@ -21,12 +20,13 @@
           <% @picture.reviews.each do |review| %>
             <div class="row">
               <div class="col-12">
-                <%= review.description %>
+                <p class="review"><%= review.description %>
+                  <% review.rating.times do %>
+                     <%=content_tag(:span, content_tag(:i, '', class: 'fa fa-star'), class: 'star') %>
+                     <% end %>
                 <br>
-                Added by
-                <%= review.author %>
-                @
-                <%= review.created_at %>
+                Added by <%= review.author %> @ <%= review.created_at.strftime('%x') %>
+                </p>
               </div>
           </div>
           <% end %>
