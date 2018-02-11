@@ -16,18 +16,18 @@ Picture.create([{ url: 'http://www.dailyherald.com/storyimage/DA/20110724/entlif
                   location: 'Wynwood Walls' }])
 
 50.times do
-  Picture.create({
-    url:'https://i.imgur.com/yGrdpxa.jpg',
-    caption: 'Carly loves pink skulls.'
-    rating: '5'
+  Picture.create(
+    url: 'https://i.imgur.com/yGrdpxa.jpg',
+    caption: 'Carly loves pink skulls.',
+    rating: '5',
     location: '199 NW 25th St Miami Florida'
-    })
+  )
 end
 
 200.times do
   Review.create(
     description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    author: ['TestAuthor','Matt','Patrick','Asger'].sample,
+    author: %w[TestAuthor Matt Patrick Asger].sample,
     rating: (1..5).to_a.sample,
     picture_id: (1..50).to_a.sample
   )
