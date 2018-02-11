@@ -11,27 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url, id: :picture_url %>
+  <div class="form-group">
+    <%= form.text_field :url, id: :picture_url, placeholder: 'Image URL' %>
   </div>
 
-  <div class="field">
-    <%= form.label :caption %>
-    <%= form.text_field :caption, id: :picture_caption %>
+  <div class="form-group">
+    <%= form.text_field :caption, id: :picture_caption, placeholder: 'Caption' %>
   </div>
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location, id: :picture_location %>
+  <div class="form-group">
+    <%= form.text_field :location, id: :picture_location, placeholder: "Street Address" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :rating %>
     <%= form.select :rating, Picture::RATING_VALS %>
   </div>
 
-  <div class="actions">
+  <div class="form-group actions">
     <%= form.submit %>
   </div>
+
 <% end %>

@@ -1,3 +1,21 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+/* universal styles */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -9,50 +27,6 @@ body {
   color: white;
   background-image: url('white-brick-wall.jpeg');
   background-attachment: fixed;
-}
-
-/* Image hover effect */
-
-.imghover img { transition: all .2s ease-in-out; }
-.imghover:hover {
-  img {
-    transform: scale(1.1);
-  }
-  .overlay {
-    height: 20%;
-  }
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #0A0D01;
-  overflow: hidden;
-  width: 85%;
-  height: 0;
-  transition: .5s ease;
-  opacity: 0.8;
-}
-
-
-.overlaytext {
-  white-space: nowrap;
-  color: white;
-  font-size: 15px;
-  position: absolute;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
-
-/* image styling */
-
-img {
-  padding: 1em;
 }
 
 /** PICTURE NEW VIEW **/

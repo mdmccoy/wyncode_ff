@@ -19,7 +19,7 @@
 
 //menu toggle-button
 $(document).ready(function() {
-  $(".menu-icon").on("click",function() {
+  $(".menu-icon").on("click", function() {
     $("nav ul").toggleClass("showing");
   });
 });
@@ -27,11 +27,9 @@ $(document).ready(function() {
 // scrolling effect
 
 $(window).on("scroll", function() {
-  if($(window).scrollTop()) {
-    $('nav').addClass('navbar-dark bg-dark');
-  }
-  else {
-    $('nav').removeClass('navbar-dark bg-dark');
-  }
-});
-console.log('HELLO');
+      if ($(window).scrollTop()) {
+        $('nav').addClass('navbar-dark bg-dark');
+        // } else {
+        //   $('nav').removeClass('navbar-dark bg-dark');
+        // }
+      });
