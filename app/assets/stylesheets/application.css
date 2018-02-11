@@ -30,19 +30,20 @@ body {
 
 /*** PICTURE SHOW VIEW ***/
 
-div#location {
+div.margin-top {
   margin-top: 1vh;
   margin-right: 1vw;
   margin-left: 1vw;
+  margin-bottom: 1vh;
 }
 
 .review-block {
-  background: black;
+  background: rgba(0, 0, 0, 0.7);
   margin-right: 1vw;
   margin-left: 1vw;
 }
 
-/* section figure {
+section figure {
   float: left;
   clear: both;
   position: relative;
@@ -65,4 +66,4 @@ section figure figcaption {
   text-align: center;
   color: #fff;
   padding: 10px;
-} */
+}
