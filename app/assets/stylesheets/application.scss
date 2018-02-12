@@ -38,7 +38,7 @@ div.index-wrapper{
   right: 0;
   background-color: #0A0D01;
   overflow: hidden;
-  width: 85%;
+  width: 73%;
   height: 0;
   transition: .5s ease;
   opacity: 0.8;
@@ -89,15 +89,13 @@ div.new-picture-wrapper {
 }
 
 
-  div.map-block#location2{
-    padding-top: 3vh;
-  }
+div.map-block#location2{
+  padding-top: 3vh;
+}
 
 .embed-responsive{
     box-shadow: 0 10px 6px -6px #777;
 }
-
-
 
 img.main-image {
   margin: 0 auto;
