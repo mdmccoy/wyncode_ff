@@ -9,7 +9,9 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1
   # GET /reviews/1.json
-  def show; end
+  def show
+    redirect_to @review.picture
+  end
 
   # GET /reviews/new
   def new
