@@ -61,6 +61,10 @@ class PicturesController < ApplicationController
     end
   end
 
+  def top5
+    @pictures = Picture.order(rating: :desc).first(5)
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

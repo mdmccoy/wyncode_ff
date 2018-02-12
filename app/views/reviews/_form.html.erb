@@ -12,33 +12,30 @@
   </div>
 <% end %>
 
-<div class="field">
-  <%= form.label :description %>
-  <%= form.text_area :description, id: :review_description %>
+<div class="form-group">
+  <%= form.text_area :description, id: :review_description, placeholder: 'Your Review Here', class: 'form-control' %>
 </div>
 
-<div class="field">
-  <%= form.label :author %>
-  <%= form.text_field :author, id: :review_author %>
+<div class="form-group">
+  <%= form.text_field :author, id: :review_author, placeholder: 'Your Name', class: 'form-control' %>
 </div>
 
-<div class="field">
+<div class="form-group">
   <%= form.label :rating %>
-  <%= form.select :rating, Picture::RATING_VALS %>
+  <%= form.select :rating, Picture::RATING_VALS, class: 'custom-select' %>
 </div>
 
 <% if @picture.nil? %>
-  <div class="field">
+  <div class="form-group">
     <%= form.label :picture_id %>
-    <%= form.text_field :picture_id, id: :review_picture_id %>
+    <%= form.text_field :picture_id, id: :review_picture_id, class: 'form-control' %>
   </div>
 
 <% else %>
   <%= form.hidden_field :picture_id, value:@picture.id %>
-
 <% end %>
 
-<div class="actions">
-  <%= form.submit %>
+<div class="form-group actions">
+  <%= form.submit class: 'btn btn-secondary' %>
 </div>
 <% end %>

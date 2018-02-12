@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="form-group">
-    <%= form.text_field :url, id: :picture_url, placeholder: 'Image URL' %>
+    <%= form.text_field :url, id: :picture_url, placeholder: 'Image URL', class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.text_field :caption, id: :picture_caption, placeholder: 'Caption' %>
+    <%= form.text_field :caption, id: :picture_caption, placeholder: 'Caption',class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= form.text_field :location, id: :picture_location, placeholder: "Street Address" %>
+    <%= form.text_field :location, id: :picture_location, placeholder: "Street Address",class: 'form-control' %>
   </div>
 
   <div class="form-group">
@@ -29,7 +29,7 @@
   </div>
 
   <div class="form-group actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-secondary' %>
   </div>
 
 <% end %>
