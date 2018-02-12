@@ -2,61 +2,65 @@
 
 <div class="container">
 
-<div class="row img-row">
-  <div class="img-wrapper">
-    <%= image_tag @picture.url, class: 'img-fluid main-image' %>
-    <div class="caption">
-      <%= @picture.caption %> Avg: <%= average_rating @picture %>
-    </div>
-
-  </div>
-</div>
-
-<div class="row margin-top">
-  <div class="col col-12 col-md-6" >
-    <div class="row">
-      <div class="col-12">
-        <div class="review-block rounded">
-          <% @picture.reviews.each do |review| %>
-            <div class="row">
-              <div class="col-12">
-                <p class="review"><%= review.description %>
-                  <% review.rating.times do %>
-                     <%=content_tag(:span, content_tag(:i, '', class: 'fa fa-star'), class: 'star') %>
-                     <% end %>
-                <br>
-                Added by <%= review.author %> @ <%= review.created_at.strftime('%x') %>
-                </p>
-              </div>
-          </div>
-          <% end %>
+  <div class="row img-row">
+    <div class="img-wrapper">
+      <%= image_tag @picture.url, class: 'img-fluid main-image' %>
+      <div class="caption">
+        <%= @picture.caption %>
+        Avg:
+        <%= average_rating @picture %>
       </div>
-        <div class="row">
-          <div class="col-12">
-            <h1>New Review</h1>
 
-            <%= render partial: 'reviews/form', locals: { review: @review } %>
+    </div>
+  </div>
+
+  <div class="row margin-top">
+    <div class="col col-12 col-md-6">
+      <div class="row">
+        <div class="col-12 review-block rounded">
+          <div class="">
+            <% @picture.reviews.each do |review| %>
+              <div class="row">
+                <div class="col-12">
+                  <p class="review"><%= review.description %>
+                    <% review.rating.times do %>
+                      <%=content_tag(:span, content_tag(:i, '', class: 'fa fa-star'), class: 'star') %>
+                    <% end %>
+                    <br>
+                    Added by
+                    <%= review.author %>
+                    @
+                    <%= review.created_at.strftime('%x') %>
+                  </p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h1>New Review</h1>
+              <%= render partial: 'reviews/form', locals: { review: @review } %>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="col col-12 col-md-6">
-    <div class=" embed-responsive embed-responsive-16by9" id="location">
-
-      <strong>Location:</strong>
-      <%= @picture.location %>
-      <%= street_view @picture %>
+    <div class="col col-12 col-md-6">
+      <div class=" embed-responsive embed-responsive-16by9" id="location">
+        <strong>Location:</strong>
+        <%= @picture.location %>
+        <%= street_view @picture %>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col">
-  <%= link_to 'Edit', edit_picture_path(@picture) %> | <%= link_to 'Back', pictures_path %>
+  <div class="row">
+    <div class="col">
+      <%= link_to 'Edit', edit_picture_path(@picture) %>
+      |
+      <%= link_to 'Back', pictures_path %>
+    </div>
   </div>
-</div>
-
 
 </div>
