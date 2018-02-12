@@ -81,6 +81,24 @@ div.new-picture-wrapper {
 
 /*** PICTURE SHOW VIEW ***/
 
+// 768px
+@media (max-width: 768px) {
+  div.map-block{
+    padding-top: 3vh;
+  }
+}
+
+
+  div.map-block#location2{
+    padding-top: 3vh;
+  }
+
+.embed-responsive{
+    box-shadow: 0 10px 6px -6px #777;
+}
+
+
+
 img.main-image {
   margin: 0 auto;
   padding: 0;
