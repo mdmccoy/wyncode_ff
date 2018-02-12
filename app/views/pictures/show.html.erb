@@ -50,7 +50,10 @@
       <div class=" embed-responsive embed-responsive-16by9" id="location">
         <strong>Location:</strong>
         <%= @picture.location %>
-        <%= street_view @picture %>
+        <%= street_view @picture, 'streetview' %>
+      </div>
+      <div class=" embed-responsive embed-responsive-16by9" id="location">
+        <%= street_view @picture, 'place' %>
       </div>
     </div>
   </div>
