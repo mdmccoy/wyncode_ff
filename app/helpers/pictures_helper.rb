@@ -18,16 +18,22 @@ module PicturesHelper
   end
 
   def average_rating(picture)
-    html = ''
     avg_rating = picture.rating
     reviews = Review.where(picture_id: picture.id)
     reviews.each do |review|
       avg_rating += review.rating
     end
     reviews.count.zero? ? avg_rating = 0 : avg_rating /= reviews.count + 1
-    avg_rating.times do
+    picture.rating = avg_rating
+    picture.save
+    html = draw_stars(avg_rating)
+    html.html_safe
+  end
+
+  def draw_stars(rating)
+    html = ''
+    rating.times do
       html += content_tag(:span, content_tag(:i, '', class: 'fa fa-star'), class: 'star')
-      # content_tag(:p, 'test')
     end
     html.html_safe
   end

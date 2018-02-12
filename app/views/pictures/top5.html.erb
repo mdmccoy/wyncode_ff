@@ -1,0 +1,21 @@
+<div class="container index-wrapper">
+  <div class="row">
+    <% @pictures.each do |picture| %>
+      <div class="col-12" style="display: relative;">
+        <div class="img-wrapper">
+        <%= link_to image_tag(picture.url, class: 'img-fluid top-5' ), picture %>
+        <div class="caption">
+          <p>
+          <%= picture.caption %>
+          Avg:
+          <%= draw_stars picture.rating %>
+          </p>
+          <p>
+            <%= picture.location %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
