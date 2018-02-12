@@ -1,5 +1,5 @@
 module PicturesHelper
-  def street_view(picture)
+  def street_view(picture, _type)
     # need to add logic here to handle different address types
     unless picture.location.empty?
       parsed_loc = picture.location.gsub(/[,]/, '').gsub(/\W/, '+')
@@ -7,7 +7,11 @@ module PicturesHelper
       lat = geocoded_loc['lat']
       lng = geocoded_loc['lng']
 
-      url = "https://www.google.com/maps/embed/v1/streetview?key=#{ENV['GOOGLE_MAPS_KEY_FF']}&location=#{lat},#{lng}"
+      if _type == 'streetview'
+        url = "https://www.google.com/maps/embed/v1/#{_type}?key=#{ENV['GOOGLE_MAPS_KEY_FF']}&location=#{lat},#{lng}"
+      else
+        url = "https://www.google.com/maps/embed/v1/place?key=#{ENV['GOOGLE_MAPS_KEY_FF']}&q=#{parsed_loc}"
+        end
       # binding.pry
       content_tag(:iframe, '', src: url, width: 560, height: 315, class: 'embed-responsive-item')
     end

@@ -1,43 +1,44 @@
 <%= form_with(model: review, local: true) do |form| %>
-  <% if review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+<% if review.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(review.errors.count, "error") %>
+      prohibited this review from being saved:</h2>
 
-      <ul>
+    <ul>
       <% review.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
+    </ul>
+  </div>
+<% end %>
 
+<div class="field">
+  <%= form.label :description %>
+  <%= form.text_area :description, id: :review_description %>
+</div>
+
+<div class="field">
+  <%= form.label :author %>
+  <%= form.text_field :author, id: :review_author %>
+</div>
+
+<div class="field">
+  <%= form.label :rating %>
+  <%= form.select :rating, Picture::RATING_VALS %>
+</div>
+
+<% if @picture.nil? %>
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :review_description %>
+    <%= form.label :picture_id %>
+    <%= form.text_field :picture_id, id: :review_picture_id %>
   </div>
 
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author, id: :review_author %>
-  </div>
+<% else %>
+  <%= form.hidden_field :picture_id, value:@picture.id %>
 
-  <div class="field">
-    <%= form.label :rating %>
-    <%= form.select :rating, Picture::RATING_VALS %>
-  </div>
+<% end %>
 
-  <% if @picture.nil? %>
-    <div class="field">
-      <%= form.label :picture_id %>
-      <%= form.text_field :picture_id, id: :review_picture_id %>
-    </div>
-
-  <% else %>
-      <%= form.hidden_field :picture_id, value:@picture.id %>
-
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div class="actions">
+  <%= form.submit %>
+</div>
 <% end %>
