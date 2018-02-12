@@ -1,3 +1,4 @@
+/* UNIVERSAL */
 html, body {
   margin: 0;
   padding: 0;
@@ -9,6 +10,12 @@ body {
   color: white;
   background-image: url('white-brick-wall.jpeg');
   background-attachment: fixed;
+}
+
+/* INDEX */
+
+div.index-wrapper{
+  padding-top: 7vh;
 }
 
 /* Image hover effect */
@@ -73,8 +80,9 @@ div.new-picture-wrapper {
 
 /*** PICTURE SHOW VIEW ***/
 
-.main-image {
+img.main-image {
   margin: 0 auto;
+  padding: 0;
   padding-top: 7vh;
 }
 
@@ -100,15 +108,15 @@ span.star {
   color: yellow;
 }
 
-p.review {
-  padding-left: 1vw;
-  padding-right: 1vw;
-}
+// p.review {
+//   // padding-left: 1vw;
+//   // padding-right: 1vw;
+// }
 
 div.margin-top {
   margin-top: 1vh;
-  margin-right: 1vw;
-  margin-left: 1vw;
+  // margin-right: 1vw;
+  // margin-left: 1vw;
   margin-bottom: 1vh;
 }
 
