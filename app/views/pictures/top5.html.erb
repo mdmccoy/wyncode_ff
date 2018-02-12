@@ -3,13 +3,12 @@
     <% @pictures.each do |picture| %>
       <div class="col-12" style="display: relative;">
         <div class="img-wrapper">
-
-        <%= link_to image_tag(picture.url, class: 'img-fluid top-5', size: 500 ), picture %>
+        <%= link_to image_tag(picture.url, class: 'img-fluid top-5' ), picture %>
         <div class="caption">
           <p>
           <%= picture.caption %>
           Avg:
-          <%= average_rating picture %>
+          <%= draw_stars picture.rating %>
           </p>
           <p>
             <%= picture.location %>
