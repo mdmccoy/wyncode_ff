@@ -101,10 +101,4 @@ Rails.application.configure do
       s3_host_name: ENV.fetch('S3_HOST_NAME')
     }
   }
-  # config.paperclip_defaults = {
-  #   storage: :s3,
-  #   preserve_files: true,
-  #   # :s3_host_name => 'REMOVE_THIS_LINE_IF_UNNECESSARY',
-  #   bucket: ENV.fetch('S3_BUCKET_NAME')
-  # }
 end
