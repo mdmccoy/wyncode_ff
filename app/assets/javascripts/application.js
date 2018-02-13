@@ -27,9 +27,9 @@ $(document).ready(function() {
 // scrolling effect
 
 $(window).on("scroll", function() {
-      if ($(window).scrollTop()) {
-        $('nav').addClass('navbar-dark bg-dark');
-        // } else {
-        //   $('nav').removeClass('navbar-dark bg-dark');
-        // }
-      });
+  if ($(window).scrollTop()) {
+    $('nav').addClass('navbar-dark bg-dark');
+    // } else {
+    //   $('nav').removeClass('navbar-dark bg-dark');
+  }
+});
