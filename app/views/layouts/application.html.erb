@@ -17,7 +17,10 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">LOGO</a>
+      <a class="navbar-brand" href="#"></a>
+      <%= link_to root_path do %>
+      <%= image_tag("logo2.png", class: "img-fluid", size: 120) %>
+      <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,16 +28,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <%= link_to "Home", root_path, class: 'nav-link' %>
+            <%= link_to "HOME", root_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to "Top 5", top5_path, class: 'nav-link' %>
+            <%= link_to "TOP 5", top5_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-          <li><%= link_to "Upload", new_picture_path, class: 'nav-link' %>
+          <li><%= link_to "UPLOAD", new_picture_path, class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to "About", about_path, class: 'nav-link'%>
+            <%= link_to "ABOUT", about_path, class: 'nav-link'%>
           </li>
         </ul>
 
