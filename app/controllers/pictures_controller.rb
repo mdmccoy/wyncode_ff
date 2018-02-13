@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: %i[show edit update destroy]
+  # params.require(:picture).permit(:url, :caption, :attachment, :location, :rating, :thumbnail)
 
   # GET /pictures
   # GET /pictures.json
