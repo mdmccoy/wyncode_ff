@@ -9,6 +9,6 @@ class Picture < ApplicationRecord
                       message: 'must have an image extension'
 
   has_many :reviews
-  has_attached_file :attachment, default_url: '/images/missing.png'
+  has_attached_file :attachment, default_url: 'missing.png'
   validates_attachment_content_type :attachment, content_type: /\Aimage\/.*\z/
 end
