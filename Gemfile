@@ -64,3 +64,6 @@ gem 'pry-rails'
 gem 'font-awesome-rails'
 
 gem 'httparty'
+
+# Added at 2018-02-12 19:31:54 -0500 by matt:
+gem "paperclip", "~> 5.2"

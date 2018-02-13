@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row img-row">
     <div class="img-wrapper">
-      <%= image_tag @picture.url, class: 'img-fluid main-image' %>
+      <%= image_tag url_or_attachment(@picture), class: 'img-fluid main-image' %>
       <div class="caption">
         <%= @picture.caption %>
         Avg:
