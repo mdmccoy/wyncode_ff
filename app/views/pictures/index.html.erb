@@ -5,7 +5,7 @@
   <div class="row">
     <% @pictures.each do |picture| %>
       <div class="col-12 col-md-4 imghover" style="display: relative;">
-        <%= link_to image_tag(picture.thumbnail, class: 'img-fluid thumbnail', size: 250 ), picture %>
+        <%= link_to image_tag(picture.url, class: 'img-fluid thumbnail'), picture %>
         <div class="overlay">
           <div class="overlaytext">
             <%= picture.caption %>
