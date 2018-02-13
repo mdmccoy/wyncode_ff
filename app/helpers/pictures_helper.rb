@@ -37,4 +37,12 @@ module PicturesHelper
     end
     html.html_safe
   end
+
+  def url_or_attachment(picture)
+    if picture.url.blank?
+      picture.attachment.url
+    else
+      picture.url
+    end
+  end
 end
