@@ -65,5 +65,9 @@ gem 'font-awesome-rails'
 
 gem 'httparty'
 
+
+# Added at 2018-02-13 12:59:40 -0500 by matt:
+gem "aws-sdk", "< 3.0"
+
 # Added at 2018-02-12 19:31:54 -0500 by matt:
 gem "paperclip", "~> 5.2"
