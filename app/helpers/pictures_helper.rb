@@ -23,7 +23,7 @@ module PicturesHelper
     reviews.each do |review|
       avg_rating += review.rating
     end
-    reviews.count.zero? ? avg_rating = 0 : avg_rating /= reviews.count + 1
+    reviews.count.zero? ? avg_rating = picture.rating : avg_rating /= reviews.count + 1
     picture.rating = avg_rating
     picture.save
     html = draw_stars(avg_rating)
