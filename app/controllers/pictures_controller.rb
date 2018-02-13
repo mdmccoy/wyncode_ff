@@ -1,6 +1,5 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: %i[show edit update destroy]
-  # params.require(:picture).permit(:url, :caption, :attachment, :location, :rating, :thumbnail)
 
   # GET /pictures
   # GET /pictures.json
@@ -75,6 +74,6 @@ class PicturesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def picture_params
-    params.require(:picture).permit(:url, :caption, :location, :rating)
+    params.require(:picture).permit(:url, :caption, :attachment, :location, :rating, :thumbnail)
   end
 end
