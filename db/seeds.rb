@@ -41,22 +41,21 @@ caption_array = ['What do you guys think?',
 #                   rating: 3,
 #                   location: 'Wynwood Walls' }])
 
-50.times do
-  picture = picture_array.sample
+picture_array.each do |picture|
   Picture.create(
     url: picture[0],
     thumbnail: picture[1],
     caption: caption_array.sample,
-    rating: (1..5).to_a.sample,
+    rating: (3..5).to_a.sample,
     location: '199 NW 25th St Miami Florida'
   )
 end
 
 200.times do
   Review.create(
-    description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    description: " Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.",
     author: %w[Steve Will Mary Laurie Dan Kim Matt Patrick Asger].sample,
-    rating: (1..5).to_a.sample,
-    picture_id: (1..50).to_a.sample
+    rating: (3..5).to_a.sample,
+    picture_id: (1..15).to_a.sample
   )
 end
