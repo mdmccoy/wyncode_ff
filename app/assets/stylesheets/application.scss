@@ -169,6 +169,15 @@ img.top-5{
 
 a.icons-sm {
   position: center;
+  color: white;
+  text-decoration: none;
+}
+
+a.icon{
+  color:white;
+  :hover{
+    color:gray;
+  }
 }
 
 .about-us {
