@@ -1,24 +1,5 @@
-# README
+Wynwalk is a web app designed to accompnay you when you walk around the Wynwood neightborhood of Miami. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Take photos of your favorite graff and post them on the app for others to check out and review. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can add a location to your photos, which allows you to look at the Google Street View and see where the photo was taken and how things have changed in the neighborhood.
