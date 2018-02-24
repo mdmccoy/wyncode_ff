@@ -22,7 +22,6 @@ class PicturesController < ApplicationController
   # POST /pictures
   def create
     @picture = Picture.new(picture_params)
-    binding.pry
 
     respond_to do |format|
       if @picture.save

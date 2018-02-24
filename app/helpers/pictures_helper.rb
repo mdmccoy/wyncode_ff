@@ -38,9 +38,9 @@ module PicturesHelper
     html.html_safe
   end
 
-  def url_or_attachment(picture)
+  def url_or_attachment(picture, thumbnail=false)
     if picture.url.blank?
-      picture.attachment.url
+      thumbnail ? picture.attachment.url(:thumb) : picture.attachment.url
     else
       picture.url
     end
