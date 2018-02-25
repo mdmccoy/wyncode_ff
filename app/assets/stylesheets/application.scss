@@ -34,41 +34,42 @@ img.thumbnail{
 
 /* Image hover effect */
 
-.imghover img { transition: all .2s ease-in-out; }
-.imghover:hover {
-  img {
-    transform: scale(1.1);
-  }
-  .overlay {
-    height: 20%;
-  }
-}
-
+// .imghover img { transition: all .2s ease-in-out; }
+// .imghover:hover {
+//   img {
+//     transform: scale(1.1);
+//   }
+//   .overlay {
+//     height: 20%;
+//   }
+// }
+//
 .overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #0A0D01;
-  overflow: hidden;
-  width: 87%;
-  height: 0;
-  transition: .5s ease;
-  opacity: 0.8;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+  // background-color: #0A0D01;
+  // overflow: hidden;
+  // width: 87%;
+  // height: 0;
+  // transition: .5s ease;
+  // opacity: 0.8;
 }
-
-
+//
+//
 .overlaytext {
-  white-space: nowrap;
-  color: white;
-  font-size: 15px;
-  position: absolute;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
+   white-space: nowrap;
+   color: black;
+//   font-size: 15px;
+   position: absolute;
+//   overflow: hidden;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   -ms-transform: translate(-50%, -50%);
+    display: none;
+ }
 
 /* image styling */
 
