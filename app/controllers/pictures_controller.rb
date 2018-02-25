@@ -22,6 +22,7 @@ class PicturesController < ApplicationController
   # POST /pictures
   def create
     @picture = Picture.new(picture_params)
+    @picture.picture_remote_url=picture_params[:url]
 
     respond_to do |format|
       if @picture.save

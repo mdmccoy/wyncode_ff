@@ -12,7 +12,7 @@ module PicturesHelper
       else
         url = "https://www.google.com/maps/embed/v1/place?key=#{ENV['GOOGLE_MAPS_KEY_FF']}&q=#{parsed_loc}"
         end
-      # binding.pry
+
       content_tag(:iframe, '', src: url, width: 560, height: 315, class: 'embed-responsive-item')
     end
   end
@@ -39,7 +39,7 @@ module PicturesHelper
   end
 
   def url_or_attachment(picture, thumbnail=false)
-    if picture.url.blank?
+    if picture.attachment.url != 'missing.png'
       thumbnail ? picture.attachment.url(:thumb) : picture.attachment.url
     else
       picture.url

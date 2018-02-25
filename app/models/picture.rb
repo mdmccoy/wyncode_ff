@@ -9,7 +9,16 @@ class Picture < ApplicationRecord
   #                     message: 'must have an image extension'
 
   has_many :reviews
-  has_attached_file :attachment, default_url: 'missing.png', :styles =>{ thumb: '100x100#' }, :convert_options => {
-    :thumb => "-quality 75 -strip" }
+  has_attached_file :attachment, default_url: 'missing.png', styles: { thumb: '150x150#' }, convert_options: {
+    thumb: '-quality 75 -strip'
+  }
   validates_attachment_content_type :attachment, content_type: /\Aimage\/.*\z/
+
+  def picture_remote_url=(url_value)
+    self.attachment = URI.parse(url_value)
+    # Assuming url_value is http://example.com/photos/face.png
+    # avatar_file_name == "face.png"
+    # avatar_content_type == "image/png"
+    @avatar_remote_url = url_value
+  end
 end
