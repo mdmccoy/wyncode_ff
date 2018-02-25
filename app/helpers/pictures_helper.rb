@@ -1,7 +1,7 @@
 module PicturesHelper
   def street_view(picture, _type)
     # need to add logic here to handle different address types
-    unless picture.location.empty?
+    unless picture.location.nil?
       parsed_loc = picture.location.gsub(/[,]/, '').gsub(/\W/, '+')
       geocoded_loc = HTTParty.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{parsed_loc}&key=#{ENV['GOOGLE_GEOCODE_KEY']}")['results'][0]['geometry']['location']
       lat = geocoded_loc['lat']
@@ -11,7 +11,7 @@ module PicturesHelper
         url = "https://www.google.com/maps/embed/v1/#{_type}?key=#{ENV['GOOGLE_MAPS_KEY_FF']}&location=#{lat},#{lng}"
       else
         url = "https://www.google.com/maps/embed/v1/place?key=#{ENV['GOOGLE_MAPS_KEY_FF']}&q=#{parsed_loc}"
-        end
+      end
 
       content_tag(:iframe, '', src: url, width: 560, height: 315, class: 'embed-responsive-item')
     end
@@ -38,11 +38,11 @@ module PicturesHelper
     html.html_safe
   end
 
-  def url_or_attachment(picture, thumbnail=false)
+  def url_or_attachment(picture, thumbnail = false)
     if picture.attachment.url != 'missing.png'
       thumbnail ? picture.attachment.url(:thumb) : picture.attachment.url
     else
-      picture.url
+      thumbnail ? picture.thumbnail : picture.url
     end
   end
 end

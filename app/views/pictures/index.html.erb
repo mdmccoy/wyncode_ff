@@ -4,7 +4,7 @@
 <div class="container index-wrapper">
   <div class="row">
     <% @pictures.each do |picture| %>
-      <div class="col-12 col-md-4 imghover" style="display: relative;">
+      <div class="col-12 col-md-3 col-sm-4 imghover" style="display: relative;">
         <%= link_to image_tag(url_or_attachment(picture,true), class: 'img-fluid thumbnail'), picture %>
         <div class="overlay">
           <div class="overlaytext">
