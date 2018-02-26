@@ -45,7 +45,7 @@ img.thumbnail{
 // }
 //
 .overlay {
-  position: absolute;
+  position: relative;
   // bottom: 0;
   // left: 0;
   // right: 0;
@@ -62,7 +62,7 @@ img.thumbnail{
    white-space: nowrap;
    color: black;
 //   font-size: 15px;
-   position: absolute;
+   position: relative;
 //   overflow: hidden;
 //   top: 50%;
 //   left: 50%;
