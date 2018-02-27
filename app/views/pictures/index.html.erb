@@ -1,6 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-<!-- <h1>Pictures</h1> -->
 <div class="index-wrapper">
 
   <ul class='cbp-rfgrid'>
@@ -8,7 +6,6 @@
     <% @pictures.each do |picture| %>
 
       <li>
-        <!-- <%= link_to image_tag(url_or_attachment(picture,true), class: ''), picture %> -->
         <a href="/pictures/<%=picture.id%>">
           <%= image_tag(url_or_attachment(picture,true))%>
           <div class="">
