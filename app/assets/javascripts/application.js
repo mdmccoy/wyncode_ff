@@ -23,13 +23,13 @@ $(document).ready(function() {
     $("nav ul").toggleClass("showing");
   });
 
-  $('.imghover').mouseenter(function(){
-    $(this).find('div.overlaytext').css("display","inline");
-  });
-
-  $('.imghover').mouseleave(function(){
-    $(this).find('.overlaytext').css("display","none");
-  });
+  // $('.imghover').mouseenter(function(){
+  //   $(this).find('div.overlaytext').css("display","inline");
+  // });
+  //
+  // $('.imghover').mouseleave(function(){
+  //   $(this).find('.overlaytext').css("display","none");
+  // });
 });
 
 // scrolling effect
