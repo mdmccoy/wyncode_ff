@@ -21,8 +21,13 @@ class PicturesController < ApplicationController
 
   # POST /pictures
   def create
+    #this is from the scaffold
     @picture = Picture.new(picture_params)
-    @picture.picture_remote_url=picture_params[:url]
+
+    #what are we doing here?
+    unless picture_params[:url].empty?
+      @picture.picture_remote_url=picture_params[:url]
+    end
 
     respond_to do |format|
       if @picture.save

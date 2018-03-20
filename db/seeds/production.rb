@@ -25,12 +25,12 @@ caption_array = ['What do you guys think?',
                  'This piece really speaks to me.',
                  'Inspiring!']
 
-                 picture_array.each do |picture|
-                   Picture.create(
-                     url: picture[0],
-                     thumbnail: picture[1],
-                     caption: caption_array.sample,
-                     rating: (3..5).to_a.sample,
-                     location: '199 NW 25th St Miami Florida'
-                   )
-                 end
+picture_array.each do |picture|
+  Picture.create(
+    url: picture[0],
+    thumbnail: picture[1],
+    caption: caption_array.sample,
+    rating: (3..5).to_a.sample,
+    location: '199 NW 25th St Miami Florida'
+  )
+end

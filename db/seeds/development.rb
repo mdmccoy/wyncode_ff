@@ -1,5 +1,5 @@
-picture_array = [['https://i.imgur.com/xsHi1wL.jpg', 'https://i.imgur.com/xsHi1wLb.jpg'],
-                 ['https://i.imgur.com/QRJIKEg.jpg', 'https://i.imgur.com/QRJIKEgb.jpg'],
+picture_array = [['https://i.imgur.com/xsHi1wL.jpg', 'https://i.imgur.com/xsHi1wLb.jpg','500 NW 24th St Miami Florida'],
+                 ['https://i.imgur.com/QRJIKEg.jpg', 'https://i.imgur.com/QRJIKEgb.jpg','D A Dorsey Ave Miami Florida'],
                  ['https://i.imgur.com/F4sTzdX.jpg', 'https://i.imgur.com/F4sTzdXb.jpg'],
                  ['https://i.imgur.com/RV7Jpwi.jpg?1', 'https://i.imgur.com/RV7Jpwib.jpg?1'],
                  ['https://i.imgur.com/kpLLrz6.jpg', 'https://i.imgur.com/kpLLrz6b.jpg'],
@@ -14,7 +14,7 @@ picture_array = [['https://i.imgur.com/xsHi1wL.jpg', 'https://i.imgur.com/xsHi1w
                  ['https://i.imgur.com/JenT3rf.jpg', 'https://i.imgur.com/JenT3rfb.jpg'],
                  ['https://i.imgur.com/P5A4RGq.jpg', 'https://i.imgur.com/P5A4RGqb.jpg'],
                  ['https://i.imgur.com/yGrdpxa.jpg', 'https://i.imgur.com/yGrdpxab.jpg'],
-                 ['https://i.imgur.com/imavQbC.jpg', 'https://i.imgur.com/imavQbCb.jpg']]
+                 ['https://i.imgur.com/imavQbC.jpg', 'https://i.imgur.com/imavQbCb.jpg','232 NW 26th St Miami Florida']]
 
 caption_array = ['What do you guys think?',
                  "I've never seen anything like this!",
@@ -44,11 +44,11 @@ picture_array.each do |picture|
   )
 end
 
-50.times do
-  Review.create(
-    description: " Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.",
-    author: %w[Steve Will Mary Laurie Dan Kim Matt Patrick Asger].sample,
-    rating: (3..5).to_a.sample,
-    picture_id: (1..15).to_a.sample
-  )
-end
+# 50.times do
+#   Review.create(
+#     description: " Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.",
+#     author: %w[Steve Will Mary Laurie Dan Kim Matt Patrick Asger].sample,
+#     rating: (3..5).to_a.sample,
+#     picture_id: (1..15).to_a.sample
+#   )
+# end
